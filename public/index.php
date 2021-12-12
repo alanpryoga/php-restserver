@@ -9,7 +9,7 @@ use Dotenv\Dotenv;
  *
  * A native PHP OOP script for building RESTful API application
  *
- * Copyright (c) 2021, Ade Syahlan Prayoga
+ * Copyright (c) 2021 Ade Syahlan Prayoga
  *
  * @author  Ade Syahlan Prayoga
  * @license https://opensource.org/licenses/MIT

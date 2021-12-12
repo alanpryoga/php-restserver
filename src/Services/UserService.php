@@ -16,13 +16,13 @@ class UserService implements UserServiceInterface
 
     public function createUser()
     {
-
+        // Code...
     }
 
     public function getAllUsers()
     {
         // Set content type as json
-        header('Content-type: application/json');
+        header('Content-Type: application/json; charset=utf-8');
 
         // Get all users
         $users = $this->userRepository
@@ -31,14 +31,14 @@ class UserService implements UserServiceInterface
         // Return result as json
         $rows = [];
         foreach ($users as $user) {
-            $item = [
+            $row = [
                 'id' => $user->getId(),
                 'name' => $user->getName(),
                 'username' => $user->getUsername(),
                 'password' => $user->getPassword(),
             ];
 
-            $rows[] = $item;
+            $rows[] = $row;
         }
 
         return json_encode($rows);
@@ -46,16 +46,31 @@ class UserService implements UserServiceInterface
 
     public function getUserById($id)
     {
+        // Set content type as json
+        header('Content-Type: application/json; charset=utf-8');
 
+        // Get user by id
+        $user = $this->userRepository
+            ->getUserById($id);
+
+        // Return result as json
+        $row = [
+            'id' => $user->getId(),
+            'name' => $user->getName(),
+            'username' => $user->getUsername(),
+            'password' => $user->getPassword(),
+        ];
+
+        return json_encode($row);
     }
 
     public function updateUser($id)
     {
-
+        // Code...
     }
 
     public function deleteUser($id)
     {
-
+        // Code...
     }
 }

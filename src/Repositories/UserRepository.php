@@ -17,7 +17,10 @@ class UserRepository implements UserRepositoryInterface
 
     public function createUser()
     {
-        // code...
+        // Compose sql query
+        $sql = 'insert into `users` (`name`, `username`, `password`) values (?, ?, ?)';
+
+        // Do sql query
     }
 
     public function getAllUsers()
@@ -41,16 +44,39 @@ class UserRepository implements UserRepositoryInterface
 
     public function getUserById($id)
     {
+        // Compose sql query
         $sql = 'select * from `users` where `id` = ?';
+
+        // Do sql query
+        $stmt = $this->mysqlConnector->getConnection()
+            ->prepare($sql);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+
+        $result = $stmt->get_result();
+
+        // TODO: Add validation if row exists or not
+
+        // Return result as object
+        $row = $result->fetch_assoc();
+        $user = new User($row['id'], $row['name'], $row['username'], $row['password']);
+
+        return $user;
     }
 
     public function updateUser($id)
     {
+        // Compose sql query
+        $sql = 'update `users` set `name`=?, `username`=?, `password`=? where `id`=?';
 
+        // Do sql query
     }
 
     public function deleteUser($id)
     {
+        // Compose sql query
+        $sql = 'delete from `users` where `id`=?';
 
+        // Do sql query
     }
 }

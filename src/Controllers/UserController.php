@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace App\Controllers;
 
+use App\Models\User;
 use App\Services\UserService;
 
 class UserController
@@ -14,11 +15,25 @@ class UserController
         $this->userService = new UserService();
     }
 
+    /**
+     * Create user
+     *
+     * @return json
+     */
     public function create()
     {
-        # code...
+        // Validation
+
+        // Create user instance
+
+        // Call service and return json
     }
 
+    /**
+     * Get all users
+     *
+     * @return json
+     */
     public function list()
     {
         // Get all users
@@ -26,18 +41,43 @@ class UserController
             ->getAllUsers();
     }
 
+    /**
+     * Get user by id
+     *
+     * @return json
+     */
     public function detail($id)
     {
-        # code...
+        // Get user by id
+        echo $this->userService
+            ->getUserById($id);
     }
 
+    /**
+     * Update user
+     *
+     * @return json
+     */
     public function update($id)
     {
-        # code...
+        // Validation
+
+        // Create user instance
+
+        // Call service and return json
     }
 
+    /**
+     * Delete user
+     *
+     * @return json
+     */
     public function delete($id)
     {
-        # code...
+        // Validation
+
+        // Create user instance
+
+        // Call service and return json
     }
 }
