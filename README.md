@@ -2,7 +2,7 @@
 A native PHP OOP script for building RESTful API application
 
 ## Table of Contents
-1. [About The Project](#motivation)
+1. [Motivation](#motivation)
 2. [Getting Started](#getting-started)
 3. [Usage](#usage)
 4. [Roadmap](#roadmap)
@@ -10,8 +10,7 @@ A native PHP OOP script for building RESTful API application
 6. [License](#license)
 7. [Contact](#contact)
 
-## About The Project
-### Built With
+## Motivation
 
 ## Getting Started
 ### Prerequisites
