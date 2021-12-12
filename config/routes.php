@@ -1,5 +1,9 @@
 <?php
+declare(strict_types=1);
+
 /**
- * Routes Definition
+ * Routes definition
+ *
+ * @return void
  */
-$router->get('/', 'HomeController@index');
+$router->get('/users', 'UserController@list');
